@@ -1,7 +1,6 @@
 import os
 import random
 
-import numpy as np
 from tkinter import *
 from PIL import Image, ImageTk
 
@@ -175,6 +174,7 @@ class Board:
 		else:
 			if cell.flagged:
 				return
+				
 			cell.reveal()
 
 			#They messed up
@@ -193,10 +193,8 @@ class Board:
 
 						cell.button.configure(state=DISABLED)
 
-			
-
 			#Flood reveal
-			if cell.value == 0:
+			elif cell.value == 0:
 				self.press(x-1, y-1)
 				self.press(x-1, y)
 				self.press(x-1, y+1)
